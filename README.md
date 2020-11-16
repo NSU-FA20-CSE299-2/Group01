@@ -17,7 +17,7 @@
 <p align="center"><strong>Name</strong><strong>:</strong> Rahman Farhat Lamisa</p>
 <p align="center"><strong>ID</strong><strong>:&nbsp; </strong>1731068042</p>
 <p align="center"><strong>Email</strong><strong>:</strong> <a href="mailto:lamisa.farhat@northsouth.edu">lamisa.farhat@northsouth.edu</a></p>
-<p align="center"><strong>Git Repository</strong><strong>: </strong><a //href="https://github.com/afnanrahad/CSE299_2/">https://github.com/NSU-FA20-CSE299-2/Group01/</a></p>
+<p align="center"><strong>Git Repository</strong><strong>: </strong><a //href="https://github.com/afnanrahad/CSE299_2/">https://github.com/NSU-FA20-CSE299-2/Group01</a></p>
 <p align="center"><strong>Date Prepared</strong><strong>: </strong>16/11/2020</p>
 <p><strong>&nbsp;</strong></p>
 <p><strong>&nbsp;</strong></p>
