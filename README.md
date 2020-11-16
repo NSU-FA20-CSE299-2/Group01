@@ -24,6 +24,7 @@
 <p><strong>INTRODUCTION</strong></p>
 <p>The name of the project is “Study Tracker” and the purpose of this app is to monitor the study time of the students using the camera of the device. The project will be available as an android app (main goal) and as a website (future goal). This app will be able to recognize the user and identify the amount of time he/she has spent on a particular material. </p>
 <p>Study Tracker is designed to use both the face recognition API and eye tracking API to confirm whether a reader is actually reading or not. The idea is based on Google Classroom. Through the Study Tracker, any user can create a classroom and upload materials. Students, in this classroom, can access and read the materials using this app or the website. Additionally, their facial information will be tracked to recognize and verify whether he/she is the actual user. Their eyes will also be tracked while reading the materials. Inside a class, the creator can monitor the reading time of the students and the amount of time a material is read. Furthermore, if the creator wants, they can view the statistics of the individual students in the class.</p>
+<p>&nbsp;</p>
 <p><strong>FEATURES</strong></p>
 <ul>
 <li>Sign-in process using facial-recognition.</li>
@@ -33,9 +34,9 @@
 <li>The system will perform as an online classroom where teachers can upload materials and students will be able to read the materials.</li>
 <li>Random code will be generated for individual class. So, to join an existing class a user must provide the specific code.</li>
 </ul>
+<p>&nbsp;</p>
 <p><strong>TECHNOLOGY</strong></p>
 <p>We decided to go with latest technologies for developing this application in order to give users a better experience.</p>
-<p>&nbsp;</p>
 <p><em>Frontend</em></p>
 <p>For the front end we will be using Android with Java and XML. XML and Android programming will be used to create user interface.</p>
 <p><em>Backend</em></p>
