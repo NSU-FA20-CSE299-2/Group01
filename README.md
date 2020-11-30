@@ -28,7 +28,8 @@
 <p><strong>FEATURES</strong></p>
 <ul>
 <li>Sign-in process using facial-recognition.</li>
-<li>New users will be able to sign-up using their email address. Existing users will also be able to sign-in using e-mail address. If that email address is already registered, the user will be shown a window, where he/she needs to provide password. But if the email doesn’t exist, then a sign-up window will be shown.</li>
+<li>User can Log-in using their gmail account.</li>
+<li>New users will be able to sign-up using their email address. Existing users will also be able to sign-in using e-mail address. If that email address is already registered, the user will be shown a window, where he/she needs to provide password. But if the email does not exist, then a sign-up window will be shown.</li>
 <li>The app will be tracking the eyes of the reader and will understand if the reader is reading or not. It is an instant process, so eyes are being tracked real-time.</li>
 <li>The system will be using eye tracking to determine the amount of time users spent to study using this application.</li>
 <li>The system will perform as an online classroom where teachers can upload materials and students will be able to read the materials.</li>
