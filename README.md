@@ -22,7 +22,7 @@
 <p><strong>&nbsp;</strong></p>
 <p><strong>&nbsp;</strong></p>
 <p><strong>INTRODUCTION</strong></p>
-<p>The name of the project is “Study Tracker” and the purpose of this app is to monitor the study time of the students using the camera of the device. The project will be available as an android app (main goal) and as a website (future goal). This app will be able to recognize the user and identify the amount of time he/she has spent on a particular material. </p>
+<p>The name of the project is “Study Tracker” and the purpose of this app is to monitor the study time of the students using the camera of the device. The project will be available as an android app (main goal) and as a website (future work). This app will be able to recognize the user and identify the amount of time he/she has spent on a particular material. </p>
 <p>Study Tracker is designed to use both the face recognition API and eye tracking API to confirm whether a reader is actually reading or not. The idea is based on Google Classroom. Through the Study Tracker, any user can create a classroom and upload materials. Students, in this classroom, can access and read the materials using this app or the website. Additionally, their facial information will be tracked to recognize and verify whether he/she is the actual user. Their eyes will also be tracked while reading the materials. Inside a class, the creator can monitor the reading time of the students and the amount of time a material is read. Furthermore, if the creator wants, they can view the statistics of the individual students in the class.</p>
 <p>&nbsp;</p>
 <p><strong>FEATURES</strong></p>
@@ -33,6 +33,7 @@
 <li>The app will be tracking the eyes of the reader and will understand if the reader is reading or not. It is an instant process, so eyes are being tracked real-time.</li>
 <li>The system will be using eye tracking to determine the amount of time users spent to study using this application.</li>
 <li>The system will perform as an online classroom where teachers can upload materials and students will be able to read the materials.</li>
+<li>Users can create a classroom or join a classroom.</li>
 <li>Random code will be generated for individual class. So, to join an existing class a user must provide the specific code.</li>
 </ul>
 <p>&nbsp;</p>
