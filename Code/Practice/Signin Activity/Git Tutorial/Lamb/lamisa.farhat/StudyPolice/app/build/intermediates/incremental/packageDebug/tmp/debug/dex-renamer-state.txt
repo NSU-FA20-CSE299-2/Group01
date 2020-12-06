@@ -1,4 +1,0 @@
-#Thu Dec 03 18:52:10 BDT 2020
-base.0=E\:\\CSE327\\Git Tutorial\\Lamb\\lamisa.farhat\\StudyPolice\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
