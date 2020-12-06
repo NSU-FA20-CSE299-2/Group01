@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quick Start &mdash; Imgur.API 3.7.0 documentation</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://media.readthedocs.org/css/sphinx_rtd_theme.css" type="text/css" />
+
+
+
+  <link rel="index" title="Index" href="../genindex/" />
+  <link rel="search" title="Search" href="../search/" />
+  <link rel="top" title="Imgur.API 3.7.0 documentation" href="../" />
+  <link rel="next" title="Authentication" href="../authentication/" />
+  <link rel="prev" title="Imgur.API" href="../" />
+
+
+  <script src="../_static/js/modernizr.min.js"></script>
+
+
+  <!-- RTD Extra Head -->
+
+  <!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+  <link rel="canonical" href="http://imgurapi.readthedocs.io/en/latest/quick-start/" />
+
+  <link rel="stylesheet" href="https://media.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
+
+  <script type="text/javascript" src="../_static/readthedocs-data.js"></script>
+
+  <!-- Add page-specific data, which must exist in the page js, not global -->
+  <script type="text/javascript">
+    READTHEDOCS_DATA['page'] = 'quick-start'
+    READTHEDOCS_DATA['source_suffix'] = '.rst'
+  </script>
+
+  <script type="text/javascript" src="../_static/readthedocs-dynamic-include.js"></script>
+
+  <!-- end RTD <extrahead> -->
+</head>
+
+
+<style>
+
+.butt_print{
+  padding: 2px;
+	background-color: white;
+	margin-top:15px;
+	border: none;
+	padding: 6px;
+	text-align: center;
+	color: white;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  color: #2980B9;
+	transition: background-color 0.15s ease-in;
+}
+
+.butt_print:hover{
+	cursor: pointer;
+  background-color: #6110a5;
+  color: white;
+}
+
+</style>
+
+<body class="wy-body-for-nav" role="document">
+
+
+  <div class="wy-grid-for-nav">
+
+
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+
+
+
+          <a href="../" class="icon icon-home"> Study
+
+
+
+          </a>
+
+
+
+
+
+          <div class="version">
+            <button class="butt_print">Print</button>
+          </div>
+
+
+
+
+
+
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+
+
+
+
+
+
+          <p class="caption"><span class="caption-text">Contents</span></p>
+          <ul class="current">
+            <li class="toctree-l1 current"><a class="current reference internal" href="#introduction">Introduction</a>
+              <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#document-purpose">Document Purpose</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#product-scope">Product Scope</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#audience">Intended Audience and Document Overview</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#definitions">Definitions, Acronyms and Abbreviations</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#conventiions">Document Conventions</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#references">References and Acknowledgements</a></li>
+              </ul>
+            </li>
+
+
+            <li class="toctree-l1"><a class="reference internal" href="#overall">Overall Description</a>
+              <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#product-overview">Product Overview</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#product-functionality">Product Functionality</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#constraints">Design and Implementation Constraints</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#dependencies">Assumptions and Dependencies</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="toctree-l1"><a class="reference internal" href="#spec-requirements">Specific Requirements</a>
+              <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#ex-int-requirements">External Interface Requirements</a>
+                  <ul>
+                    <li class="toctree-l3"><a class="reference internal" href="#user-interface">User Interfaces</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#hard-interface">Hardware Interfaces</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#soft-interface">Software Interfaces</a></li>
+                  </ul>
+                </li>
+
+
+                <li class="toctree-l2"><a class="reference internal" href="#functional-requirements">Functional Requirements</a>
+                  <ul>
+                    <li class="toctree-l3"><a class="reference internal" href="#feature1">'<'feature Name'>'</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#feature2">'<'feature Name'>'</a></li>
+                  </ul>
+                </li>
+
+
+                <li class="toctree-l2"><a class="reference internal" href="#use-cases">Use Case Model</a>
+                  <ul>
+                    <li class="toctree-l3"><a class="reference internal" href="#use-case-1">'<'Use Case Name'>'</a></li>
+                    <li class="toctree-l3"><a class="reference internal" href="#use-case-2">'<'Use Case Name'>'</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li class="toctree-l1"><a class="reference internal" href="#non-func-requirements">Other Non-functional Requirements</a>
+              <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#performance-req">Performance Requirements</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#safety-req">Safety and Security Requirements</a></li>
+                <li class="toctree-l2"><a class="reference internal" href="#quality-attr">Software Quality Attributes</a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../">Imgur.API</a>
+
+      </nav>
+
+
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div itemprop="articleBody">
+
+              <div class="section" id="introduction">
+                <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+                <div class="section" id="document-purpose">
+                  <h2>Document Purpose<a class="headerlink" href="#document-purpose" title="Permalink to this headline">¶</a></h2>
+                  <div class="highlight-default">
+                    <div class="highlight">
+                      <pre></pre>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="section" id="product-scope">
+                  <h2>Product Scope<a class="headerlink"
+                      href="#product-scope" title="Permalink to this headline">¶</a></h2>
+                  <div class="highlight-default">
+                    <div class="highlight">
+                      <pre></pre>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="section" id="audience">
+                  <h2>Intended Audience and Document Overview<a class="headerlink" href="#audience" title="Permalink to this headline">¶</a>
+                  </h2>
+                  <div class="highlight-default">
+                    <div class="highlight">
+                      <pre></pre>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="section" id="definitions">
+                  <h2>Definitions, Acronyms and Abbreviations<a class="headerlink"
+                      href="#definitions" title="Permalink to this headline">¶</a></h2>
+                  <div class="highlight-default">
+                    <div class="highlight">
+                      <pre></pre>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="section" id="conventions">
+                  <h2>Document Conventions<a class="headerlink"
+                      href="#conventions" title="Permalink to this headline">¶</a></h2>
+                  <div class="highlight-default">
+                    <div class="highlight">
+                      <pre></pre>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="section" id="references">
+                  <h2>References and Acknowledgements<a class="headerlink"
+                      href="#references" title="Permalink to this headline">¶</a></h2>
+                  <div class="highlight-default">
+                    <div class="highlight">
+                      <pre></pre>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+              </div>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="section" id="overall">
+              <h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
+              
+
+
+              <div class="section" id="product-overview">
+                <h2>Product Overview<a class="headerlink"
+                    href="#product-overview" title="Permalink to this headline">¶</a></h2>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="section" id="product-functionality">
+                <h2>Product Functionality<a class="headerlink"
+                    href="#product-functionality" title="Permalink to this headline">¶</a></h2>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="section" id="constraints">
+                <h2>Design and Implementation Constraints<a class="headerlink"
+                    href="#constraints" title="Permalink to this headline">¶</a></h2>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="section" id="dependencies">
+                <h2>Assumptions and Dependencies<a class="headerlink"
+                    href="#dependencies" title="Permalink to this headline">¶</a></h2>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+            <div class="section" id="spec-requirements">
+            <h1>Specific Requirements<a class="headerlink" href="#spec-requirements" title="Permalink to this headline">¶</a></h1>
+
+            <div class="section" id="ex-int-requirements">
+              <h2>External Interface Requirements<a class="headerlink" href="#ex-int-requirements" title="Permalink to this headline">¶</a></h2>
+              <p> insert use case diagram </p>
+              <div class="highlight-default">
+                <div class="highlight">
+                  <pre></pre>
+                </div>
+              </div>
+              
+              <div class="section" id="user-interface">
+                <h3>User Interfaces<a class="headerlink" href="#user-interface"
+                    title="Permalink to this headline">¶</a></h3>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section" id="hard-interface">
+                <h3>Hardware Interfaces<a class="headerlink" href="#hard-interface"
+                    title="Permalink to this headline">¶</a></h3>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section" id="soft-interface">
+                <h3>Software Interfaces<a class="headerlink" href="#soft-interface"
+                    title="Permalink to this headline">¶</a></h3>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+           <div class="section" id="functional-requirements">
+              <h2>Functional Requirements<a class="headerlink" href="#functional-requirements" title="Permalink to this headline">¶</a></h2>
+              
+              <div class="section" id="feature1">
+                <h3>Feature name 1<a class="headerlink" href="#feature1" title="Permalink to this headline">¶</a></h3>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="section" id="feature2">
+                <h3>Feature name 2<a class="headerlink" href="#feature2" title="Permalink to this headline">¶</a></h3>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            awdwadawdwaaaaaaaaaaaawdddddddddddddddddddddddddddddddddddddddddddddd
+
+
+
+            <div class="section" id="use-cases">
+              <h2>Use Case Model<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
+              
+              <div class="section" id="use-case-1">
+                <h3>Use Case Name<a class="headerlink" href="#use-case-1" title="Permalink to this headline">¶</a></h3>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="section" id="use-case-2">
+                <h3>Use Case Name<a class="headerlink" href="#use-case-2" title="Permalink to this headline">¶</a></h3>
+                <div class="highlight-default">
+                  <div class="highlight">
+                    <pre></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+
+
+
+
+       
+
+
+         

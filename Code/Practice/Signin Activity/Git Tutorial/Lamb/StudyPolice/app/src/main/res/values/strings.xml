@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Study Police</string>
+
+    <string name="fac">Frequently Accessed Classes</string>
+    <string name="noti">Important Shouts</string>
+
+</resources>

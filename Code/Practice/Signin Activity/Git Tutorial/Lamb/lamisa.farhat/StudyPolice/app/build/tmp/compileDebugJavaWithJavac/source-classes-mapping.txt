@@ -1,0 +1,170 @@
+ModelClasses/CreatedClass.java
+ ModelClasses.CreatedClass
+com/foh/studypolice/SignInActivity.java
+ com.foh.studypolice.SignInActivity
+ com.foh.studypolice.SignInActivity$1
+ com.foh.studypolice.SignInActivity$2
+ com.foh.studypolice.SignInActivity$3
+ com.foh.studypolice.SignInActivity$4
+ com.foh.studypolice.SignInActivity$5
+ModelClasses/CreatorShortDetails.java
+ ModelClasses.CreatorShortDetails
+ModelClasses/UserShortDetails.java
+ ModelClasses.UserShortDetails
+AllConstants/IntentKeys.java
+ AllConstants.IntentKeys
+ModelClasses/MaterialDetails.java
+ ModelClasses.MaterialDetails
+Adapters/ShoutViewAdapter.java
+ Adapters.ShoutViewAdapter
+ Adapters.ShoutViewAdapter$OnShoutClickHandler
+ Adapters.ShoutViewAdapter$ShoutViewHolder
+ModelClasses/ClassAndCreatorDetails.java
+ ModelClasses.ClassAndCreatorDetails
+Adapters/ReadTimeViewAdapter.java
+ Adapters.ReadTimeViewAdapter
+ Adapters.ReadTimeViewAdapter$OnStatClickHandler
+ Adapters.ReadTimeViewAdapter$TimeViewHolder
+Utils/CameraSourcePreview.java
+ Utils.CameraSourcePreview
+ Utils.CameraSourcePreview$1
+ Utils.CameraSourcePreview$SurfaceCallback
+Utils/FileUtils.java
+ Utils.FileUtils
+Utils/FrequencyUpdater.java
+ Utils.FrequencyUpdater
+ Utils.FrequencyUpdater$1
+Utils/SPDateUtils.java
+ Utils.SPDateUtils
+Utils/EyeTracker.java
+ Utils.EyeTracker
+ Utils.EyeTracker$EyeTrackCallback
+ModelClasses/ClassroomShortDetails.java
+ ModelClasses.ClassroomShortDetails
+Adapters/SpinnerMaterialAdapter.java
+ Adapters.SpinnerMaterialAdapter
+com/foh/studypolice/ClassDataActivity.java
+ com.foh.studypolice.ClassDataActivity
+ com.foh.studypolice.ClassDataActivity$1
+ com.foh.studypolice.ClassDataActivity$2
+ModelClasses/FaceMatchDetails.java
+ ModelClasses.FaceMatchDetails
+com/foh/studypolice/PostFaceActivity.java
+ com.foh.studypolice.PostFaceActivity
+ com.foh.studypolice.PostFaceActivity$1
+ com.foh.studypolice.PostFaceActivity$2
+ com.foh.studypolice.PostFaceActivity$3
+ModelClasses/ClassDetails.java
+ ModelClasses.ClassDetails
+com/foh/studypolice/MainActivity.java
+ com.foh.studypolice.MainActivity
+ com.foh.studypolice.MainActivity$1
+ com.foh.studypolice.MainActivity$10
+ com.foh.studypolice.MainActivity$11
+ com.foh.studypolice.MainActivity$12
+ com.foh.studypolice.MainActivity$2
+ com.foh.studypolice.MainActivity$3
+ com.foh.studypolice.MainActivity$4
+ com.foh.studypolice.MainActivity$4$1
+ com.foh.studypolice.MainActivity$5
+ com.foh.studypolice.MainActivity$5$1
+ com.foh.studypolice.MainActivity$6
+ com.foh.studypolice.MainActivity$6$1
+ com.foh.studypolice.MainActivity$7
+ com.foh.studypolice.MainActivity$7$1
+ com.foh.studypolice.MainActivity$8
+ com.foh.studypolice.MainActivity$9
+ModelClasses/ReadTimeDetails.java
+ ModelClasses.ReadTimeDetails
+ModelClasses/GeneralShoutDetails.java
+ ModelClasses.GeneralShoutDetails
+com/foh/studypolice/BuildConfig.java
+ com.foh.studypolice.BuildConfig
+ModelClasses/DemoPhoto.java
+ ModelClasses.DemoPhoto
+Utils/FaceTrackerBot.java
+ Utils.FaceTrackerBot
+com/foh/studypolice/ClassDataDetailsActivity.java
+ com.foh.studypolice.ClassDataDetailsActivity
+ com.foh.studypolice.ClassDataDetailsActivity$1
+ com.foh.studypolice.ClassDataDetailsActivity$1$1
+ com.foh.studypolice.ClassDataDetailsActivity$2
+ com.foh.studypolice.ClassDataDetailsActivity$2$1
+ com.foh.studypolice.ClassDataDetailsActivity$3
+ com.foh.studypolice.ClassDataDetailsActivity$4
+ com.foh.studypolice.ClassDataDetailsActivity$ServerCallback
+ com.foh.studypolice.ClassDataDetailsActivity$ServerCallback$1
+ com.foh.studypolice.ClassDataDetailsActivity$SortReadingTime
+ModelClasses/JoinedClassDetails.java
+ ModelClasses.JoinedClassDetails
+Adapters/CreatedClassAdapter.java
+ Adapters.CreatedClassAdapter
+ Adapters.CreatedClassAdapter$ClassViewHolder
+ Adapters.CreatedClassAdapter$OnClassClickHandler
+Adapters/MaterialListAdapter.java
+ Adapters.MaterialListAdapter
+ Adapters.MaterialListAdapter$MaterialClickHandler
+ Adapters.MaterialListAdapter$MaterialViewHolder
+Adapters/FrequencyViewAdapter.java
+ Adapters.FrequencyViewAdapter
+ Adapters.FrequencyViewAdapter$FrequencyViewHolder
+ Adapters.FrequencyViewAdapter$OnClickHandler
+Utils/GraphicOverlay.java
+ Utils.GraphicOverlay
+ Utils.GraphicOverlay$Graphic
+ModelClasses/TokenKeyModel.java
+ ModelClasses.TokenKeyModel
+com/foh/studypolice/MaterialViewActivity.java
+ com.foh.studypolice.MaterialViewActivity
+ com.foh.studypolice.MaterialViewActivity$1
+ com.foh.studypolice.MaterialViewActivity$2
+ com.foh.studypolice.MaterialViewActivity$3
+ com.foh.studypolice.MaterialViewActivity$4
+ com.foh.studypolice.MaterialViewActivity$5
+ com.foh.studypolice.MaterialViewActivity$6
+ com.foh.studypolice.MaterialViewActivity$7
+ModelClasses/ErrorDetails.java
+ ModelClasses.ErrorDetails
+com/foh/studypolice/JoinedClassActivity.java
+ com.foh.studypolice.JoinedClassActivity
+ com.foh.studypolice.JoinedClassActivity$1
+ com.foh.studypolice.JoinedClassActivity$2
+ com.foh.studypolice.JoinedClassActivity$2$1
+ModelClasses/ContentFrequencyDetails.java
+ ModelClasses.ContentFrequencyDetails
+Adapters/JoinedClassAdapter.java
+ Adapters.JoinedClassAdapter
+ Adapters.JoinedClassAdapter$ClassViewHolder
+ Adapters.JoinedClassAdapter$OnClassClickHandler
+AllConstants/IntegerKeys.java
+ AllConstants.IntegerKeys
+ModelClasses/DataExists.java
+ ModelClasses.DataExists
+com/foh/studypolice/MaterialListActivity.java
+ com.foh.studypolice.MaterialListActivity
+ com.foh.studypolice.MaterialListActivity$1
+ com.foh.studypolice.MaterialListActivity$1$1
+ModelClasses/UserExists.java
+ ModelClasses.UserExists
+AllConstants/SharedPreferenceKeys.java
+ AllConstants.SharedPreferenceKeys
+ModelClasses/UserDetails.java
+ ModelClasses.UserDetails
+ModelClasses/ClassStudentDetails.java
+ ModelClasses.ClassStudentDetails
+Adapters/SpinnerStudentAdapter.java
+ Adapters.SpinnerStudentAdapter
+com/foh/studypolice/LogInWithPasswordActivity.java
+ com.foh.studypolice.LogInWithPasswordActivity
+ com.foh.studypolice.LogInWithPasswordActivity$1
+Utils/CameraPreview.java
+ Utils.CameraPreview
+AllConstants/RestApiUrlsAndKeys.java
+ AllConstants.RestApiUrlsAndKeys
+ModelClasses/ResponseErrors.java
+ ModelClasses.ResponseErrors
+ModelClasses/User.java
+ ModelClasses.User
+com/foh/studypolice/SignUpActivity.java
+ com.foh.studypolice.SignUpActivity
+ com.foh.studypolice.SignUpActivity$1
