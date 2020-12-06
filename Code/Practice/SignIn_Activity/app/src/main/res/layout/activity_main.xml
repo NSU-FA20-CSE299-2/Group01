@@ -17,10 +17,10 @@
         app:layout_constraintVertical_weight=".40">
 
         <ImageView
-            android:id="@+id/curve2"
+            android:id="@+id/white_gradient"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:src="@drawable/curve2"
+            android:src="@drawable/white_gradient"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,9 +59,9 @@
             android:id="@+id/imageView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/curve2"
-            app:layout_constraintEnd_toEndOf="@+id/curve2"
-            app:layout_constraintStart_toStartOf="@+id/curve2"
+            app:layout_constraintBottom_toBottomOf="@+id/white_gradient"
+            app:layout_constraintEnd_toEndOf="@+id/white_gradient"
+            app:layout_constraintStart_toStartOf="@+id/white_gradient"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/logo2"
             tools:ignore="MissingConstraints" />

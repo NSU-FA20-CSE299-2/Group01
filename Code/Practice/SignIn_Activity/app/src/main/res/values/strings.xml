@@ -37,5 +37,15 @@
     <string name="important_message"># A clear picture of your face is very important in order to utilize all the features properly.\n\n# You have to again go through this process after every 14 days.\n\n# We don\'t use your facial information in any illegal activity.\n\n# For further queries, please email at lamb.is.foh@gmail.com\n\n# Thank you for using StudyPolice!</string>
 
     <string name="server_client_id">911614986050-uaeksqc69jg63teb5i848idq53qrfs9p.apps.googleusercontent.com</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
 
 </resources>
