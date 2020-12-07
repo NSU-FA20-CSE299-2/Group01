@@ -115,23 +115,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_email" />
 
-        <TextView
-            android:id="@+id/tvb_proceed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorSignButtBG"
-            android:fontFamily="@font/pt_sans_bold"
-            android:gravity="center"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="8dp"
-            android:text="Proceed"
-            android:textColor="@color/gray"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.9"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/butt_google_sign_in" />
+
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/butt_google_sign_in"
@@ -142,6 +126,16 @@
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="@+id/edit_email"
             app:layout_constraintTop_toBottomOf="@+id/OrView4" />
+
+        <Button
+            android:id="@+id/proceed_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/butt_google_sign_in" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

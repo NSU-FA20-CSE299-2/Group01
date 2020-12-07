@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "929404060422",
+    "project_id": "studytracker-90ef6",
+    "storage_bucket": "studytracker-90ef6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929404060422:android:ec60dee04379205c561487",
+        "android_client_info": {
+          "package_name": "com.example.signin_activity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929404060422-ek0f8gke9sufdb2nhd4b7j04i3k4a7q3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIHFGSGbFA9bYq171L51FvHX5aVDQDd7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929404060422-ek0f8gke9sufdb2nhd4b7j04i3k4a7q3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
