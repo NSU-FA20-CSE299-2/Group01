@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Signin_Activity"
+rootProject.name = "SignUp"

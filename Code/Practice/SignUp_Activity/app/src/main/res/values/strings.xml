@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Study Police</string>
+    <string name="app_name">Study Tracker</string>
 
     <string name="fac">Frequently Accessed Contents</string>
     <string name="noti">Important Shouts</string>
