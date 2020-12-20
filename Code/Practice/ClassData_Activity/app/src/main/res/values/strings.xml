@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ClassData_Activity</string>
+    <string-array name="demon_arrays">
+        <item>Malaysia</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
+</resources>
