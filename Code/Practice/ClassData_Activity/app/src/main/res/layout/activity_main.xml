@@ -10,17 +10,12 @@
         android:id="@+id/sp_main_toolbar"
         layout="@layout/sp_toolbar" />
 
-
-     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/upper_cont"
-        android:layout_width="409dp"
-        android:layout_height="283dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="432dp"
+        android:layout_height="362dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sp_main_toolbar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/sp_main_toolbar">
 
         <TextView
             android:id="@+id/title_overview"
@@ -41,16 +36,29 @@
             style="?android:progressBarStyleHorizontal"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginLeft="44dp"
             android:layout_marginBottom="8dp"
             android:indeterminateDuration="20000"
             android:progress="80"
             android:progressDrawable="@drawable/circle"
             app:layout_constraintBottom_toTopOf="@+id/fig_activity"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/average_progress"
             app:layout_constraintTop_toBottomOf="@+id/title_overview"
             app:layout_constraintVertical_chainStyle="packed" />
-
+        <TextView
+            android:id="@+id/tv_activity_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/pattaya"
+            android:text="0.7"
+            android:textAlignment="center"
+            android:textColor="@color/colorProgressText"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toBottomOf="@+id/activity_progress"
+            app:layout_constraintEnd_toEndOf="@+id/activity_progress"
+            app:layout_constraintStart_toStartOf="@+id/activity_progress"
+            app:layout_constraintTop_toTopOf="@+id/activity_progress" />
         <TextView
             android:id="@+id/fig_activity"
             android:layout_width="0dp"
@@ -66,53 +74,8 @@
             app:layout_constraintEnd_toEndOf="@+id/activity_progress"
             app:layout_constraintStart_toStartOf="@+id/activity_progress"
             app:layout_constraintTop_toBottomOf="@+id/activity_progress" />
-
-        <TextView
-            android:id="@+id/tv_activity_index"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/pattaya"
-            android:text="0.7"
-            android:textAlignment="center"
-            android:textColor="@color/colorProgressText"
-            android:textSize="48sp"
-            app:layout_constraintBottom_toBottomOf="@+id/activity_progress"
-            app:layout_constraintEnd_toEndOf="@+id/activity_progress"
-            app:layout_constraintStart_toStartOf="@+id/activity_progress"
-            app:layout_constraintTop_toTopOf="@+id/activity_progress" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/lower_cont"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintVertical_weight=".50"
-        app:layout_constraintBottom_toTopOf="@+id/tvb_upload_material"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upper_cont">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/tvb_upload_material"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/colorNavyBlue"
-        android:fontFamily="@font/pt_sans_bold"
-        android:gravity="center_horizontal|center_vertical"
-        android:paddingHorizontal="12dp"
-        android:text="+ Upload Material"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lower_cont"
-        app:layout_constraintVertical_weight=".10"  />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
