@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">ClassData_Activity</string>
+    <string name="app_name">Class Data Activity</string>
+
+    <string name="fac">Frequently Accessed Contents</string>
     <string-array name="demon_arrays">
         <item>Malaysia</item>
         <item>United States</item>
@@ -10,4 +12,10 @@
         <item>New Zealand</item>
         <item>India</item>
     </string-array>
+
+
+
+    <string name="title_activity_material_view">MaterialViewActivity</string>
+
+
 </resources>
