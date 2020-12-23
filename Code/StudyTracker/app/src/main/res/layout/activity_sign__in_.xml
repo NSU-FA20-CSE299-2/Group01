@@ -100,12 +100,37 @@
             android:paddingHorizontal="20dp"
             android:paddingVertical="20dp"
             android:textSize="15sp"
-            
+            app:layout_constraintBottom_toTopOf="@+id/OrView4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/OrView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="or"
+            android:textSize="16sp"
+            android:textColor="@color/colorSignButtBG"
+            android:fontFamily="@font/pt_sans_bold_italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_email" />
 
+
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/butt_google_sign_in"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/edit_email"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/edit_email"
+            app:layout_constraintTop_toBottomOf="@+id/OrView4" />
+
+       
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
