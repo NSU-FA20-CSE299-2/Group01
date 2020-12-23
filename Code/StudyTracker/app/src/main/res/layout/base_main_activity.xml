@@ -82,5 +82,6 @@
             app:fabCustomSize="46dp"
             android:src="@drawable/ic_fab" />
 
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
