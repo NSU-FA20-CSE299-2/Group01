@@ -196,7 +196,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <TextView
                 android:id="@+id/stud_study_hr"
                 android:layout_width="wrap_content"
@@ -224,7 +223,6 @@
                 app:layout_constraintVertical_bias="0.68" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         <TextView
             android:id="@+id/label_top_material"
@@ -279,7 +277,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <TextView
                 android:id="@+id/material_study_hr"
                 android:layout_width="wrap_content"
@@ -309,5 +306,22 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/tvb_upload_material"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorNavyBlue"
+        android:fontFamily="@font/pt_sans_bold"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingHorizontal="12dp"
+        android:text="+ Upload Material"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lower_cont"
+        app:layout_constraintVertical_weight=".10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
