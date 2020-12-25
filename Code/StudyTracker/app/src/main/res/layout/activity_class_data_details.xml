@@ -35,9 +35,24 @@
         android:paddingHorizontal="16dp"
         android:paddingVertical="8dp"
         android:popupElevation="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/all_materials"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/class_title" />
 
+    <Spinner
+        android:id="@+id/all_materials"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:elevation="12dp"
+        android:entries="@array/demon_arrays"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:popupElevation="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/all_students"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/all_students"
+        app:layout_constraintTop_toBottomOf="@+id/all_students" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
