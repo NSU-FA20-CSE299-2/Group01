@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "350141020564",
+    "project_id": "cse299-group1-study-tracker",
+    "storage_bucket": "cse299-group1-study-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350141020564:android:8f8de1a8babda8747a3781",
+        "android_client_info": {
+          "package_name": "com.example.studytracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350141020564-3ol9iquvbkau29o5t2pefm7tpej6t89h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7AQZkuU97IoK5H6G_B13w0EkgsCKGpNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350141020564-3ol9iquvbkau29o5t2pefm7tpej6t89h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
