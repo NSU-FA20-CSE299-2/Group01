@@ -85,7 +85,7 @@
         app:layout_constraintVertical_weight=".60">
 
         <EditText
-            android:id="@+id/edit_email"
+            android:id="@+id/logInEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -116,7 +116,7 @@
             android:fontFamily="@font/pt_sans_bold_italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_email" />
+            app:layout_constraintTop_toBottomOf="@+id/logInEmailAddress" />
 
 
 
@@ -125,9 +125,9 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/edit_email"
+            app:layout_constraintEnd_toEndOf="@+id/logInEmailAddress"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="@+id/edit_email"
+            app:layout_constraintStart_toStartOf="@+id/logInEmailAddress"
             app:layout_constraintTop_toBottomOf="@+id/OrView4" />
 
         <Button
