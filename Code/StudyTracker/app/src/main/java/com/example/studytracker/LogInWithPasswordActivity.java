@@ -1,9 +1,9 @@
 package com.example.studytracker;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LogInWithPasswordActivity extends AppCompatActivity {
 
@@ -16,6 +16,6 @@ public class LogInWithPasswordActivity extends AppCompatActivity {
 
         label = findViewById(R.id.logInEmailAddress);
 
-        tv_email
+        
     }
 }

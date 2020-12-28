@@ -91,8 +91,7 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="60dp"
-
-            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/logInEmailPassword"
             android:background="@color/gray"
             android:ems="10"
             android:hint="Enter E-mail address"
@@ -100,45 +99,77 @@
             android:paddingHorizontal="20dp"
             android:paddingVertical="20dp"
             android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/OrView4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/OrView4"
-            android:layout_width="wrap_content"
+
+        <EditText
+            android:id="@+id/logInEmailPassword"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="or"
-            android:textSize="16sp"
-            android:textColor="@color/colorSignButtBG"
-            android:fontFamily="@font/pt_sans_bold_italic"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="60dp"
+            android:background="@color/gray"
+            android:ems="10"
+            android:hint="Enter password"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="20dp"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logInEmailAddress" />
 
+        <LinearLayout
+            android:id="@+id/newusersignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/proceed_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logInEmailPassword"
+            app:layout_constraintVertical_bias="0.197">
 
+            <TextView
+                android:id="@+id/newuser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pt_sans_bold"
+                android:text="New user?"
+                android:textSize="20sp"></TextView>
 
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/butt_google_sign_in"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/logInEmailAddress"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="@+id/logInEmailAddress"
-            app:layout_constraintTop_toBottomOf="@+id/OrView4" />
+            <TextView
+                android:id="@+id/signUpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pt_sans_bold"
+                android:text=" Signup"
+                android:textColor="@color/colorProgressText"
+                android:textSize="20sp"
+                android:clickable="true">
+
+            </TextView>
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/proceed_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
             android:text="Proceed"
+            app:layout_constraintTop_toBottomOf="@id/newusersignup"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/butt_google_sign_in" />
+            app:layout_constraintStart_toStartOf="parent" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
