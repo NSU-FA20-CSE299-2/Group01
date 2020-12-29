@@ -78,8 +78,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed">
 
-            <TextView
+            <Button
                 android:id="@+id/tv_opened_class"
+                android:background="@android:color/transparent"
+                android:textAllCaps="false"
+                android:gravity="left"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pt_sans"
@@ -117,8 +120,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/created_classs_cont">
 
-            <TextView
+            <Button
                 android:id="@+id/tv_joined_class"
+                android:background="@android:color/transparent"
+                android:textAllCaps="false"
+                android:gravity="left"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pt_sans"
@@ -164,6 +170,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/pt_sans_bold"
             android:background="@android:color/transparent"
+            android:textAllCaps="false"
             android:text="Log Out"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
