@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpActivity extends AppCompatActivity {
-    EditText st_name, st_email, st_password, st_password2;
+    EditText st_name, st_email, st_password;
     Button button;
     FirebaseAuth mAuth;
 
@@ -30,7 +30,6 @@ public class SignUpActivity extends AppCompatActivity {
         st_name = findViewById(R.id.signUpName);
         st_email = findViewById(R.id.signUpEmailAddress);
         st_password = findViewById(R.id.signUpPassword);
-        st_password2 = findViewById(R.id.signUpPassword2);
         button = findViewById(R.id.signUpButton);
 
         mAuth = FirebaseAuth.getInstance();
@@ -40,7 +39,6 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = st_email.getText().toString().trim();
                 String password = st_password.getText().toString().trim();
-                String password2 = st_password2.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     st_email.setError(("Email is required"));
@@ -62,11 +60,6 @@ public class SignUpActivity extends AppCompatActivity {
                     st_password.setError("Minimum six in length is required");
                     return;
                 }
-
-                //if (password != password2) {
-                  //  st_password2.setError("The password does not match");
-                  //  return;
-                //}
 
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
