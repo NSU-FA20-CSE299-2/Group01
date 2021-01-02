@@ -117,22 +117,25 @@
 
 
             <RadioButton
-                android:id="@+id/rad_female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:fontFamily="@font/pt_sans"
-                android:text="Female"
-                android:textSize="16sp" />
-
-            <RadioButton
                 android:id="@+id/rad_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:fontFamily="@font/pt_sans"
                 android:text="Male"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:onClick="checkButton"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/rad_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:fontFamily="@font/pt_sans"
+                android:text="Female"
+                android:textSize="16sp"
+                android:onClick="checkButton"/>
 
         </RadioGroup>
 
@@ -196,12 +199,12 @@
                 android:textSize="20sp"></TextView>
 
             <TextView
-                android:id="@+id/signUpButton"
+                android:id="@+id/signInTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:fontFamily="@font/pt_sans_bold"
-                android:text=" SignIn"
+                android:text=" Signin"
                 android:textColor="@color/colorProgressText"
                 android:textSize="20sp">
 

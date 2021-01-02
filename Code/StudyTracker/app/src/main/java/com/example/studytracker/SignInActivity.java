@@ -36,8 +36,6 @@ public class SignInActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(getApplicationContext(),LogInWithPasswordActivity.class));
-
                 String email = st_email.getText().toString().trim();
                 String password = st_password.getText().toString().trim();
 
