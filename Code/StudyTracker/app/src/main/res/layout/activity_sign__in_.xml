@@ -99,13 +99,14 @@
             android:paddingHorizontal="20dp"
             android:paddingVertical="20dp"
             android:textSize="15sp"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <EditText
-            android:id="@+id/logInEmailPassword"
+            android:id="@+id/logInPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -114,27 +115,42 @@
             android:background="@color/gray"
             android:ems="10"
             android:hint="Enter password"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:paddingHorizontal="20dp"
             android:paddingVertical="20dp"
             android:textSize="15sp"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logInEmailAddress" />
 
+        <Button
+            android:id="@+id/proceed_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="154dp"
+            android:layout_marginLeft="154dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="155dp"
+            android:layout_marginRight="155dp"
+            android:text="SIgn IN"
+            app:layout_constraintBottom_toTopOf="@+id/newusersignup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logInPassword" />
+
         <LinearLayout
             android:id="@+id/newusersignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
             android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/proceed_button"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logInEmailPassword"
-            app:layout_constraintVertical_bias="0.197">
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 android:id="@+id/newuser"
@@ -148,27 +164,15 @@
                 android:id="@+id/signUpButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:fontFamily="@font/pt_sans_bold"
-                android:text=" Signup"
+                android:text=" SignUp"
                 android:textColor="@color/colorProgressText"
-                android:textSize="20sp"
-                android:clickable="true">
+                android:textSize="20sp">
 
             </TextView>
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/proceed_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
-            android:text="Proceed"
-            app:layout_constraintTop_toBottomOf="@id/newusersignup"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
