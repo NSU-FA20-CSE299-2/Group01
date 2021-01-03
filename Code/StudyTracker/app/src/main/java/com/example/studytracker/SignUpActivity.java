@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -35,6 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore fireStore;
     String userID;
+    //TextView signIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
         st_password = findViewById(R.id.signUpPassword);
         button = findViewById(R.id.signUpButton);
         radioGroup = findViewById(R.id.rg_gender);
+        //signIn = findViewById(R.id.signInTextView);
 
         mAuth = FirebaseAuth.getInstance();
         fireStore = FirebaseFirestore.getInstance();
