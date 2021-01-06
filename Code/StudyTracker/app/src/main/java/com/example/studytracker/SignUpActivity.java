@@ -1,13 +1,8 @@
 package com.example.studytracker;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +11,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -36,6 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore fireStore;
     String userID;
+    TextView msignInTextView;
     //TextView signIn;
 
     @Override
@@ -48,10 +47,18 @@ public class SignUpActivity extends AppCompatActivity {
         st_password = findViewById(R.id.signUpPassword);
         button = findViewById(R.id.signUpButton);
         radioGroup = findViewById(R.id.rg_gender);
+        msignInTextView = findViewById(R.id.signInTextView);
         //signIn = findViewById(R.id.signInTextView);
 
         mAuth = FirebaseAuth.getInstance();
         fireStore = FirebaseFirestore.getInstance();
+
+        msignInTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

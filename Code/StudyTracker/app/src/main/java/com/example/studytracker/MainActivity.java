@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentL = new Intent(MainActivity.this, SignInActivity.class);
                 startActivity(intentL);
                 finish();
-                Toast.makeText(MainActivity.this, "Succesfully Logout",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Logged Out Succesfully",Toast.LENGTH_SHORT).show();
             }
         });
 
