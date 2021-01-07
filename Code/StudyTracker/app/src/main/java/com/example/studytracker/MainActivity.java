@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ConstraintLayout diaJoinCont;
     private ConstraintLayout diaCreateCont;
     FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +60,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         fabCreateJoinClass.setOnClickListener(this);
+        fabCreateJoinClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCreateJoin();
+            }
+        });
 
     }
 
@@ -79,6 +86,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvDiaCreateClass.setOnClickListener(this);
         tvbDiaCreateClass.setOnClickListener(this);
     }
+    private void showCreateJoin(){
+        diaCreateJoinCont.setVisibility(View.VISIBLE);
+        diaJoinCont.setVisibility(View.GONE);
+        diaCreateCont.setVisibility(View.GONE);
+        mDialog.show();
+    }
+
+    private void showJoin(){
+        diaCreateJoinCont.setVisibility(View.GONE);
+        diaJoinCont.setVisibility(View.VISIBLE);
+        diaCreateCont.setVisibility(View.GONE);
+        mDialog.show();
+    }
+
+    private void showCreate(){
+        diaCreateJoinCont.setVisibility(View.GONE);
+        diaJoinCont.setVisibility(View.GONE);
+        diaCreateCont.setVisibility(View.VISIBLE);
+        mDialog.show();
+    }
+
+
+
+
+
+
+
+
+    private void createClassStart(){
+        String name = etvClassName.getText().toString().trim();
+        if(name.equals("") || name.isEmpty()){
+            etvClassName.setError("Can't be empty.");
+            return;
+        }
+       // createClassInDatabase(name);
+    }
+
+
 
     private void addToolBar() {
         Toolbar toolbar = findViewById(R.id.sp_main_toolbar);
