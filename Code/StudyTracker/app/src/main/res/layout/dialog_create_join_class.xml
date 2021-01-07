@@ -94,7 +94,9 @@
                 app:layout_constraintBottom_toTopOf="@+id/edit_join_class"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingLeft="28dp"
+                android:paddingRight="48dp" />
 
             <EditText
                 android:id="@+id/edit_join_class"

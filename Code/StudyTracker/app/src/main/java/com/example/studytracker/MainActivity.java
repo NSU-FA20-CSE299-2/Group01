@@ -17,7 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView mcreate_class_option;
+    private TextView mcreate_class_option, mjoin_class_option;
     private FloatingActionButton fabCreateJoinClass;
     private Dialog mDialog;
     private TextView tvDiaJoinClass;
@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();*/
         setContentView(R.layout.activity_main);
-
         addToolBar();
         setDialog();
 
@@ -49,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         fabCreateJoinClass = findViewById(R.id.fab_create_join_class);
         mtvbLogOut = findViewById(R.id.tvb_log_out);
+        mcreate_class_option = findViewById(R.id.create_class_option);
+        mjoin_class_option = findViewById(R.id.join_class_option);
+
         mtvbLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,14 +62,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         fabCreateJoinClass.setOnClickListener(this);
-        fabCreateJoinClass.setOnClickListener(new View.OnClickListener() {
+        /*fabCreateJoinClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showCreateJoin();
+                //showCreateJoin();
             }
-        });
+        });*/
+
 
     }
+
 
     private void setDialog() {
         mDialog = new Dialog(this);
@@ -107,20 +111,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mDialog.show();
     }
 
-
-
-
-
-
-
-
     private void createClassStart(){
         String name = etvClassName.getText().toString().trim();
         if(name.equals("") || name.isEmpty()){
             etvClassName.setError("Can't be empty.");
             return;
         }
-       // createClassInDatabase(name);
+        //createClassInDatabase(String name);
+    }
+
+    public void createClassInDatabase(String name){
+
     }
 
 
@@ -134,11 +135,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         openDialog();
+        switch (view.getId()) {
+
+            case R.id.fab_create_join_class:
+                showCreateJoin();
+                break;
+
+            case R.id.join_class_option:
+                showJoin();
+                break;
+
+            case R.id.create_class_option:
+                showCreate();
+                break;
+        }
 
     }
 
     private void openDialog() {
     }
+
 
 
 }
