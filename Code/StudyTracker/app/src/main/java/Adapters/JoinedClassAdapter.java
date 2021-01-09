@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.foh.studypolice.R;
+import com.example.studytracker.R;
 
 import java.util.List;
 
@@ -58,7 +58,6 @@ public class JoinedClassAdapter extends RecyclerView.Adapter<JoinedClassAdapter.
 
         public ClassViewHolder(View itemView) {
             super(itemView);
-
             className = itemView.findViewById(R.id.list_joined_class_name);
             creatorName = itemView.findViewById(R.id.list_creator_name);
 

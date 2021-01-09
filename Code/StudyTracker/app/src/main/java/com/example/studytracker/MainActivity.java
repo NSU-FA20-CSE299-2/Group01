@@ -23,12 +23,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.CreatedClassAdapter;
+import Adapters.JoinedClassAdapter;
 import ModelClasses.ClassDetails;
+import ModelClasses.JoinedClassDetails;
 
 import static AllConstants.IntentKeys.EXTRA_KEY_CLASS_ID;
 
 
-public  class MainActivity extends AppCompatActivity implements View.OnClickListener, CreatedClassAdapter.OnClassClickHandler {
+public  class MainActivity extends AppCompatActivity implements View.OnClickListener, CreatedClassAdapter.OnClassClickHandler, JoinedClassAdapter.OnClassClickHandler {
+
     private RecyclerView mCreatedClassRecyclerView;
     private CreatedClassAdapter mCreatedClassAdapter;
 
@@ -44,17 +47,26 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
     private EditText etvAccessCode;
     private EditText etvClassName;
     private TextView mtvbLogOut;
+    private TextView mtvJoinedClass;
+
+    private RecyclerView mJoinedClassRecyclerView;
+    private JoinedClassAdapter mJoinedClassAdapter;
+
+
     private ConstraintLayout diaCreateJoinCont;
     private ConstraintLayout diaJoinCont;
     private ConstraintLayout diaCreateCont;
     FirebaseAuth mAuth;
 
     private boolean mIsCreatedOpen = false;
+    private boolean mIsJoinedOpen = false;
 
     private TextView mtvCreatedClass;
+
+    private ConstraintLayout mJoinedCont;
     private ConstraintLayout mCreatedCont;
 
-
+    private List<JoinedClassDetails> mJoinedClassList;
     private List<ClassDetails> mClassDetailsList;
 
     @Override
@@ -70,10 +82,15 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         //startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
 
         fabCreateJoinClass = findViewById(R.id.fab_create_join_class);
+
         mtvbLogOut = findViewById(R.id.tvb_log_out);
         mcreate_class_option = findViewById(R.id.create_class_option);
         mjoin_class_option = findViewById(R.id.join_class_option);
         mtvCreatedClass = findViewById(R.id.tv_opened_class);
+        mtvJoinedClass = findViewById(R.id.tv_joined_class);
+
+        mCreatedCont = findViewById(R.id.created_classs_cont);
+        mJoinedCont = findViewById(R.id.joined_classs_cont);
 
         mtvbLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,12 +104,7 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
 
         fabCreateJoinClass.setOnClickListener(this);
         mtvCreatedClass.setOnClickListener(this);
-        /*fabCreateJoinClass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //showCreateJoin();
-            }
-        });*/
+        mtvJoinedClass.setOnClickListener(this);
 
 
     }
@@ -103,6 +115,13 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
                 false);
         mCreatedClassRecyclerView.setLayoutManager(cratedClassLayoutManager);
         mCreatedClassRecyclerView.setHasFixedSize(true);
+
+        mJoinedClassRecyclerView = findViewById(R.id.rv_joined_class);
+        LinearLayoutManager joinedClassLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,
+                false);
+        mJoinedClassRecyclerView.setLayoutManager(joinedClassLayoutManager);
+        mJoinedClassRecyclerView.setHasFixedSize(true);
+
 
     }
 
@@ -115,9 +134,10 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         mCreatedClassRecyclerView.setAdapter(mCreatedClassAdapter);
 
 
-       /* if(mJoinedClassList == null) mJoinedClassList = new ArrayList<>();
+        if(mJoinedClassList == null) mJoinedClassList = new ArrayList<>();
         mJoinedClassAdapter = new JoinedClassAdapter(this, mJoinedClassList, this);
-        mJoinedClassRecyclerView.setAdapter(mJoinedClassAdapter);*/
+        mJoinedClassRecyclerView.setAdapter(mJoinedClassAdapter);
+
     }
 
 
@@ -129,9 +149,6 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         tvDiaCreateClass = mDialog.findViewById(R.id.create_class_option);
         tvbDiaCreateClass = mDialog.findViewById(R.id.create_class_button);
         diaCreateJoinCont = mDialog.findViewById(R.id.create_join_container);
-
-        mCreatedCont = findViewById(R.id.created_classs_cont);
-
         diaJoinCont = mDialog.findViewById(R.id.join_container);
         diaCreateCont = mDialog.findViewById(R.id.create_container);
         etvAccessCode = mDialog.findViewById(R.id.edit_join_class);
@@ -221,7 +238,8 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         /*
          * @param mIsJoinedOpen is true if user wants to open the created class list
          */
-       /* if(mIsJoinedOpen){
+
+        if(mIsJoinedOpen){
             mtvJoinedClass.setText("- Joined Class");
             mJoinedClassRecyclerView.setVisibility(View.VISIBLE);
             ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) mJoinedCont.getLayoutParams();
@@ -237,7 +255,8 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
                     ConstraintLayout.LayoutParams.WRAP_CONTENT);
             TransitionManager.beginDelayedTransition(mJoinedCont);
             mJoinedCont.setLayoutParams(copyParams(layoutParams, params));
-        }*/
+        }
+
     }
 
     @Override
@@ -268,6 +287,14 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
     public void onClassClicked(ClassDetails classDetails) {
         Intent intent = new Intent(this, ClassDataActivity.class);
         intent.putExtra(EXTRA_KEY_CLASS_ID, classDetails.id);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public void onJoinedClassClicked(JoinedClassDetails classDetails) {
+        Intent intent = new Intent(this, JoinedClassActivity.class);
+        intent.putExtra(EXTRA_KEY_CLASS_ID, classDetails.classroom.id);
         startActivity(intent);
 
     }
