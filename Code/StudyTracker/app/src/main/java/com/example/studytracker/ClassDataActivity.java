@@ -98,8 +98,8 @@ public class ClassDataActivity extends AppCompatActivity {
                 Uri uri = uriTask.getResult();
 
                 uploadPDF uploadPDF = new uploadPDF(uploadFile.getText().toString(), uri.toString());
-                databaseReference.child((databaseReference.push().getKey()).setValue(uploadPDF));
-                Toast.makeText(MainActivity.this,"File uploaded.", Toast.LENGTH_LONG).show();
+                databaseReference.child(databaseReference.push().getKey()).setValue(uploadPDF);
+                Toast.makeText(ClassDataActivity.this,"File uploaded.", Toast.LENGTH_LONG).show();
                 progressDialog.dismiss();
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
