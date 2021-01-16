@@ -1,148 +1,157 @@
 package com.example.studytracker;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
-import android.Manifest;
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.ui.AppBarConfiguration;
 
-import java.util.TimeZone;
+import com.google.gson.Gson;
 
-public class ClassDataActivity extends AppCompatActivity {
+import ModelClasses.ClassDetails;
 
-    TextView selectFile;
-    EditText fileName;
-    Button upload;
-    Uri pdfUri;
+import static Utils.FileUtils.getPathFromURI;
 
-    FirebaseStorage storage;
-    FirebaseDatabase database;
-    ProgressDialog progressDialog;
+public class ClassDataActivity extends AppCompatActivity implements View.OnClickListener {
+
+    protected static final int STORAGE_PERMISSION_WRITE = 26;
+    protected static final int STORAGE_PERMISSION_READ = 19;
+
+    private boolean CAN_WRITE = false;
+    private boolean CAN_READ = false;
+
+    private boolean ON_GOING = false;
+
+    private static final int PICK_PDF_FILE = 25;
+
+    private Uri mSelectedPDFUri;
+    private Dialog mDialog;
+    private EditText etvFileName;
+    private TextView tvbUploadedFile;
+    private TextView tvbUpload;
+    private TextView tvb_upload_material;
+
+    private ClassDetails mClassDetails;
+
+    private Gson mGson;
+
+    private TextView mtvClassName;
+    private TextView mtvbClassStudent;
+    private TextView mtvbClassMaterial;
+    private TextView mtvAccessCode;
+    private TextView mtvbUploadMaterrial;
+    private TextView mtvbViewAllStudent;
+    private TextView mtvbViewAllMaterial;
+    private TextView mtop_student_cont;
+    private TextView mtop_material_cont;
+
+    private AppBarConfiguration mAppBarConfiguration;
+    private DrawerLayout mDrawer;
+
+    private ConstraintLayout diaCreateJoinCont;
+    private ConstraintLayout diaJoinCont;
+    private ConstraintLayout diaCreateCont;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_data);
 
-        storage = FirebaseStorage.getInstance();
-        database = FirebaseDatabase.getInstance();
 
-        selectFile = findViewById(R.id.tvb_uploaded_file);
-        fileName = findViewById(R.id.edit_file_name);
-        upload = findViewById(R.id.tvb_upload);
 
-        selectFile.setOnClickListener(new View.OnClickListener() {
+        tvbUploadedFile = mDialog.findViewById(R.id.tvb_uploaded_file);
+        tvb_upload_material = findViewById(R.id.tvb_upload_material);
+        mtop_student_cont = findViewById(R.id.top_student_cont);
+        mtop_material_cont =findViewById(R.id.top_material_cont);
+
+        tvbUploadedFile.setOnClickListener(this);
+        tvb_upload_material.setOnClickListener(this);
+
+        mtop_student_cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(ClassDataActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    selectPDF();
-                } else {
-                    ActivityCompat.requestPermissions(ClassDataActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 9);
-                }
+                startActivity(new Intent(getApplicationContext(),ClassDataDetailsActivity.class));
             }
         });
-
-        upload.setOnClickListener(new View.OnClickListener() {
+        mtop_material_cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pdfUri != null)
-                    uploadFile(pdfUri);
-                else
-                    Toast.makeText(ClassDataActivity.this, "Select a file.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), ClassDataDetailsActivity.class));
             }
         });
     }
 
-    private void uploadFile(Uri pdfUri) {
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        progressDialog.setTitle("Uploading file...");
-        progressDialog.setProgress(0);
-        progressDialog.show();
 
-        final String fileName = System.currentTimeMillis() + "";
-        StorageReference storageReference = storage.getReference();
-
-        storageReference.child("Uploads").child(fileName).putFile(pdfUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                String url = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
-
-                DatabaseReference reference = database.getReference();
-
-                reference.child(fileName).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful())
-                            Toast.makeText(ClassDataActivity.this, "File successfully uploaded", Toast.LENGTH_SHORT).show();
-                        else
-                            Toast.makeText(ClassDataActivity.this, "File not successfully uploaded", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(ClassDataActivity.this, "File not successfully uploaded", Toast.LENGTH_SHORT).show();
-
-            }
-        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                int currentProgress = (int) (100 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
-            }
-        });
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 9 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            selectPDF();
-        } else
-            Toast.makeText(ClassDataActivity.this, "Please provide permission.", Toast.LENGTH_SHORT).show();
-    }
-
-    private void selectPDF() {
-
-        Intent intent = new Intent();
-        intent.setType("application/pdf");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, 86);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 86 && resultCode == RESULT_OK && data != null) {
-            pdfUri = data.getData();
+    /*
+     * After the selection of a file, the file name should be extracted from the uri to save in database
+     * */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private String getFileNameFromUri(Uri uri){
+        String path = getPathFromURI(this, uri);
+        Log.i("path", path);
+        String filename = path.substring(path.lastIndexOf("/")+1);
+        String file;
+        if (filename.indexOf(".") > 0) {
+            file = filename.substring(0, filename.lastIndexOf("."));
         } else {
-            Toast.makeText(ClassDataActivity.this, "Please select a file", Toast.LENGTH_SHORT).show();
+            file =  filename;
         }
+        return file;
+    }
+
+    private void setUpDialog(){
+        mDialog = new Dialog(this);
+        mDialog.setContentView(R.layout.dialog_upload_material);
+        etvFileName = mDialog.findViewById(R.id.edit_file_name);
+        tvbUploadedFile = mDialog.findViewById(R.id.tvb_uploaded_file);
+        tvbUpload = mDialog.findViewById(R.id.tvb_upload);
+
+        tvbUploadedFile.setOnClickListener(this);
+        tvbUpload.setOnClickListener(this);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void showPopUpDialog(){
+        if(mSelectedPDFUri != null) {
+            String name = getFileNameFromUri(mSelectedPDFUri);
+            tvbUploadedFile.setText(name);
+            etvFileName.setText(name);
+        }
+
+        mDialog.show();
+    }
+
+
+    private void showCreateJoin(){
+        diaCreateJoinCont.setVisibility(View.VISIBLE);
+        diaJoinCont.setVisibility(View.GONE);
+        diaCreateCont.setVisibility(View.GONE);
+        mDialog.show();
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch(view.getId()){
+
+            case R.id.tvb_students:
+                break;
+
+
+
+        }
+
     }
 }

@@ -35,6 +35,7 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
     private RecyclerView mCreatedClassRecyclerView;
     private CreatedClassAdapter mCreatedClassAdapter;
 
+
     private TextView mcreate_class_option, mjoin_class_option;
     private FloatingActionButton fabCreateJoinClass;
     private Dialog mDialog;
