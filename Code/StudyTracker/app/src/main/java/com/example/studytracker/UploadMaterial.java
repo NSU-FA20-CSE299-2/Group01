@@ -72,11 +72,6 @@ public class UploadMaterial extends AppCompatActivity {
     }
 
     private void uploadFile(Uri pdfUri) {
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        progressDialog.setTitle("Uploading file...");
-        progressDialog.setProgress(0);
-        progressDialog.show();
 
         final String fileName = System.currentTimeMillis() + "";
         StorageReference storageReference = storage.getReference();
@@ -103,11 +98,6 @@ public class UploadMaterial extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(UploadMaterial.this, "File not successfully uploaded", Toast.LENGTH_SHORT).show();
 
-            }
-        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                int currentProgress = (int) (100 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
             }
         });
     }
