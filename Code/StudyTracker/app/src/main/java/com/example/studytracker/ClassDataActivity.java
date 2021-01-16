@@ -35,8 +35,8 @@ import java.util.TimeZone;
 
 public class ClassDataActivity extends AppCompatActivity {
 
-    TextView mtop_student_cont;
-    TextView mtop_material_cont;
+    ConstraintLayout mtop_student_cont;
+    ConstraintLayout mtop_material_cont;
     Button button;
 
     @Override
