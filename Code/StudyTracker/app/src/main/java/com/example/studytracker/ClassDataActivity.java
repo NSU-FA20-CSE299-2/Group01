@@ -44,6 +44,9 @@ public class ClassDataActivity extends AppCompatActivity {
     FirebaseDatabase database;
     ProgressDialog progressDialog;
 
+    TextView mtop_student_cont;
+    TextView mtop_material_cont;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +58,23 @@ public class ClassDataActivity extends AppCompatActivity {
         selectFile = findViewById(R.id.tvb_uploaded_file);
         fileName = findViewById(R.id.edit_file_name);
         upload = findViewById(R.id.tvb_upload);
+
+        mtop_student_cont=findViewById(R.id.top_student_cont);
+        mtop_material_cont=findViewById(R.id.top_material_cont);
+
+        mtop_student_cont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ClassDataDetailsActivity.class));
+            }
+        });
+
+        mtop_material_cont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ClassDataDetailsActivity.class));
+            }
+        });
 
         selectFile.setOnClickListener(new View.OnClickListener() {
             @Override
