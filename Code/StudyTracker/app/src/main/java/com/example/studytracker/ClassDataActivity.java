@@ -33,22 +33,33 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.TimeZone;
 
-public class ClassDataActivity extends AppCompatActivity {
+import ModelClasses.ClassDetails;
 
-    ConstraintLayout mtop_student_cont;
-    ConstraintLayout mtop_material_cont;
+import static AllConstants.IntentKeys.EXTRA_KEY_CLASS_ID;
+import static AllConstants.IntentKeys.EXTRA_KEY_CLASS_NAME;
+import static AllConstants.IntentKeys.EXTRA_KEY_PREVIEW;
+
+public class ClassDataActivity extends AppCompatActivity implements View.OnClickListener {
+
+  //  ConstraintLayout mtop_student_cont;
+  //  ConstraintLayout mtop_material_cont;
     Button button;
+    private ClassDetails mClassDetails;
+
+    ConstraintLayout  mtvbViewAllStudent;
+    ConstraintLayout mtvbViewAllMaterial;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_data);
 
-        mtop_student_cont = findViewById(R.id.top_student_cont);
-        mtop_material_cont = findViewById(R.id.top_material_cont);
+      /*  mtop_student_cont = findViewById(R.id.top_student_cont);
+        mtop_material_cont = findViewById(R.id.top_material_cont);*/
         button = findViewById(R.id.tvb_upload_material);
 
-        mtop_student_cont.setOnClickListener(new View.OnClickListener() {
+      /*  mtop_student_cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), ClassDataDetailsActivity.class));
@@ -60,7 +71,7 @@ public class ClassDataActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), ClassDataDetailsActivity.class));
             }
-        });
+        });*/
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,5 +79,51 @@ public class ClassDataActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), UploadMaterial.class));
             }
         });
+
+        mtvbViewAllStudent = findViewById(R.id.top_student_cont);
+        mtvbViewAllMaterial = findViewById(R.id.top_material_cont);
+
+
+
+
+
+        mtvbViewAllStudent.setOnClickListener(this);
+        mtvbViewAllMaterial.setOnClickListener(this);
+
     }
+
+    private void gotoClassMaterials(){
+        Intent intent = new Intent(this, MaterialListActivity.class);
+        intent.putExtra(EXTRA_KEY_CLASS_ID, mClassDetails.id);
+        startActivity(intent);
+    }
+    private void gotoClassDataDetails(boolean isStu){
+        Intent intent = new Intent(this, ClassDataDetailsActivity.class);
+        intent.putExtra(EXTRA_KEY_PREVIEW, isStu);
+        startActivity(intent);
+    }
+
+    public void onClick(View view){
+        switch(view.getId()){
+
+            case R.id.tvb_students:
+                break;
+
+            case R.id.tvb_materials:
+                gotoClassMaterials();
+                break;
+
+            case R.id.top_student_cont:
+                gotoClassDataDetails(true);
+                break;
+
+            case R.id.top_material_cont:
+                gotoClassDataDetails(false);
+                break;
+        }
+
+
+    }
+
+
 }

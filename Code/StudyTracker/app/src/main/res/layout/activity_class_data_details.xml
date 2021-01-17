@@ -16,13 +16,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/pt_sans_bold"
-        android:text="Class Name Should be Here"
+        android:text="Class"
         android:textAlignment="center"
         android:textColor="@color/colorClassText"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sp_main_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/sp_main_toolbar"
+        android:gravity="center_horizontal" />
 
     <Spinner
         android:id="@+id/all_students"
@@ -86,7 +87,8 @@
         app:layout_constraintBottom_toTopOf="@+id/tvb_stu_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvb_stu_info"
-        app:layout_constraintTop_toBottomOf="@+id/tvb_stu_info" />
+        app:layout_constraintTop_toBottomOf="@+id/tvb_stu_info"
+        android:gravity="center_horizontal" />
 
     <FrameLayout
         android:layout_width="match_parent"
