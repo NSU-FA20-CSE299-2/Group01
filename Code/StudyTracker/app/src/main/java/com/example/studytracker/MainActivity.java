@@ -3,12 +3,14 @@ package com.example.studytracker;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -18,13 +20,30 @@ import androidx.transition.TransitionManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.auth.User;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Random;
 
 import Adapters.CreatedClassAdapter;
 import Adapters.JoinedClassAdapter;
 import ModelClasses.ClassDetails;
+import ModelClasses.ContentFrequencyDetails;
+import ModelClasses.CreatedClass;
 import ModelClasses.JoinedClassDetails;
 
 import static AllConstants.IntentKeys.EXTRA_KEY_CLASS_ID;
@@ -49,6 +68,11 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
     private TextView mtvbLogOut;
     private TextView mtvJoinedClass;
 
+    private Gson mGson;
+    TextView string;
+
+
+
     private RecyclerView mJoinedClassRecyclerView;
     private JoinedClassAdapter mJoinedClassAdapter;
 
@@ -56,6 +80,8 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
     private ConstraintLayout diaCreateJoinCont;
     private ConstraintLayout diaJoinCont;
     private ConstraintLayout diaCreateCont;
+
+    DatabaseReference databaseReference;
     FirebaseAuth mAuth;
 
     private boolean mIsCreatedOpen = false;
@@ -76,9 +102,16 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();*/
         setContentView(R.layout.activity_main);
+
+       databaseReference = FirebaseDatabase.getInstance().getReference("Created Class");
+      // databaseReference.addListenerForSingleValueEvent(valueEventListener);
+
         addToolBar();
         setDialog();
         setUpRecyclerViews();
+
+
+        mGson = new Gson();
         //startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
 
         fabCreateJoinClass = findViewById(R.id.fab_create_join_class);
@@ -108,6 +141,17 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
 
 
     }
+    ValueEventListener valueEventListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+
+        }
+    };
 
     private void setUpRecyclerViews(){
         mCreatedClassRecyclerView = findViewById(R.id.rv_opened_class);
@@ -185,12 +229,10 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
             etvClassName.setError("Can't be empty.");
             return;
         }
-        //createClassInDatabase(String name);
+        createClassInDatabase(name);
     }
 
-    public void createClassInDatabase(String name){
 
-    }
 
 
 
@@ -258,6 +300,73 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         }
 
     }
+    private void createClassInDatabase(String name){
+
+
+
+        String classname = etvClassName.getText().toString().trim();
+        etvAccessCode.setText(generateString());
+        String accesscode = etvAccessCode.getText().toString().trim();
+
+        String key = databaseReference.push().getKey();
+
+
+
+        CreatedClass Class= new CreatedClass(classname, accesscode);
+        databaseReference.child(key).setValue(Class);
+        Toast.makeText(getApplicationContext(), "Class created successfully!", Toast.LENGTH_LONG).show();
+
+        mDialog.dismiss();
+       // getCreatedClassInfo();
+
+    }
+
+   /* private void getCreatedClassInfo() {
+
+        Type listType = new TypeToken<ArrayList<ClassDetails>>() {
+        }.getType();
+        List<ClassDetails> classList = mGson.fromJson(result, listType);
+        if (classList != null) {
+            mClassDetailsList.clear();
+            mClassDetailsList.addAll(classList);
+            mCreatedClassAdapter.notifyDataSetChanged();
+
+        }
+    }
+*/
+    private String generateString(){
+
+        char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
+        StringBuilder stringBuilder = new StringBuilder();
+        Random random = new Random();
+        for(int i=0;i<=5;i++){
+            char c = chars[random.nextInt(chars.length)];
+            stringBuilder.append(c);
+        }
+        return stringBuilder.toString();
+    }
+
+    private void joinClassStart(){
+        String code = etvAccessCode.getText().toString().trim();
+        if(code.equals("") || code.isEmpty()){
+            etvAccessCode.setError("Can't be empty.");
+            return;
+        }
+        joinClassInDatabase(code);
+    }
+
+    private void joinClassInDatabase(String code){
+
+        Query query = FirebaseDatabase.getInstance().getReference("Created Class")
+                .orderByChild("access_code")
+                .equalTo(code);
+        databaseReference.addListenerForSingleValueEvent(valueEventListener);
+        Toast.makeText(MainActivity.this, "Joined class successfully!", Toast.LENGTH_LONG).show();
+        mDialog.dismiss();
+       // getJoinedClassInfo();
+
+
+    }
 
     @Override
     public void onClick(View view) {
@@ -271,13 +380,21 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
             case R.id.join_class_option:
                 showJoin();
                 break;
+            case R.id.join_class_button:
+                joinClassStart();
+                break;
 
             case R.id.create_class_option:
                 showCreate();
                 break;
+
+            case R.id.create_class_button:
+                createClassStart();
+                break;
         }
 
     }
+
 
     private void openDialog() {
     }
@@ -291,6 +408,9 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+
+
+
     @Override
     public void onJoinedClassClicked(JoinedClassDetails classDetails) {
         Intent intent = new Intent(this, JoinedClassActivity.class);
@@ -298,4 +418,6 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         startActivity(intent);
 
     }
+
+
 }
