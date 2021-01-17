@@ -42,13 +42,11 @@
 <p><em>Frontend</em></p>
 <p>For the front end we will be using Android with Java and XML. XML and Android programming will be used to create user interface.</p>
 <p><em>Backend</em></p>
-<p>Python’s web framework - Django with REST API will be used as the application’s backend. Django ensures rapid development providing high security and maintenance.
-</p>
 <p>This application uses an eye tracking API and a facial recognition API which uses smartphone camera for eye tracking and facial recognition.</p>
 <p><em>Database</em></p>
-<p>We will be using SQLite and Json objects to handle our entire database.</p>
+<p>We will be using Firebase to handle our entire database.</p>
 <p><em>Additional Information</em></p>
-<p>Allauth for Django will be used to allow users to login using their Google account.</p>
+<p>Firebase will also be used to for the user authentication.</p>
 <p>The app can run on android devices which have version 5.0 (Lollipop)or more.</p>
 <p>&nbsp;</p>
 <p><strong>MONETIZATION</strong></p>
