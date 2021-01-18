@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -22,8 +23,9 @@ import java.util.List;
 import ModelClasses.CreatedClass;
 
 public class ClassListActivity extends AppCompatActivity {
-    DatabaseReference databaseReference;
-
-    List<String> myList;
-
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_class_list);
+    }
 }
