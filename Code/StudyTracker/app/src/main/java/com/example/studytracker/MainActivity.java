@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,6 +46,7 @@ import ModelClasses.ClassDetails;
 import ModelClasses.ContentFrequencyDetails;
 import ModelClasses.CreatedClass;
 import ModelClasses.JoinedClassDetails;
+import retrofit2.http.POST;
 
 import static AllConstants.IntentKeys.EXTRA_KEY_CLASS_ID;
 
@@ -67,6 +69,7 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
     private EditText etvClassName;
     private TextView mtvbLogOut;
     private TextView mtvJoinedClass;
+    private Button mtv_opened_class;
 
     private Gson mGson;
     TextView string;
@@ -115,6 +118,7 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         //startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
 
         fabCreateJoinClass = findViewById(R.id.fab_create_join_class);
+        mtv_opened_class = findViewById(R.id.tv_opened_class);
 
         mtvbLogOut = findViewById(R.id.tvb_log_out);
         mcreate_class_option = findViewById(R.id.create_class_option);
@@ -136,6 +140,7 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         });
 
         fabCreateJoinClass.setOnClickListener(this);
+        mtv_opened_class.setOnClickListener(this);
         mtvCreatedClass.setOnClickListener(this);
         mtvJoinedClass.setOnClickListener(this);
 
@@ -368,6 +373,12 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    private void showclasslist(){
+        Intent intent = new Intent(MainActivity.this, ClassListActivity.class);
+
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View view) {
         openDialog();
@@ -391,6 +402,10 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
             case R.id.create_class_button:
                 createClassStart();
                 break;
+            case R.id.tv_opened_class:
+                showclasslist();
+                break;
+
         }
 
     }
