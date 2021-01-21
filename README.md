@@ -3,7 +3,7 @@
 <p align="center"><strong><img src="https://media.dhakatribune.com/uploads/2016/11/nsulogo.jpg" alt="" width="307" height="172" /></strong></p>
 <p align="center"><strong>North South University</strong></p>
 <p align="center">Department of Electrical &amp; Computer Engineering</p>
-<p align="center"><strong>Project Proposal</strong></p>
+<p align="center"><strong>Project Report</strong></p>
 <p align="center"><strong>Group No</strong>: 01</p>
 <p align="center"><strong>Fall 2020</strong></p>
 <p align="center"><strong>Project Name</strong>: STUDY TRACKER</p>
@@ -21,10 +21,24 @@
 <p align="center"><strong>Date Prepared</strong><strong>: </strong>16/11/2020</p>
 <p><strong>&nbsp;</strong></p>
 <p><strong>&nbsp;</strong></p>
-<p><strong>INTRODUCTION</strong></p>
+
+<h2> Project Name: Study Tracker </h2>
+<h3 id="table-of-contents">Table of contents</h3>
+
+<ol>
+  <a href="#introduction"><li>Introduction</li><br></a>
+  <a href="#features"><li>Software Specification</li><br></a>
+  <a href="#technology"><li>Technology</li><br></a>
+  <a href="#monetization"><li>Monetization</li></a><br>
+  <a href="#conclusion"><li>Conclusion</li></a><br><hr>
+
+</ol>
+
+<h2 id="introduction">1. Introduction</h2>
 <p>The name of the project is “Study Tracker” and the purpose of this app is to monitor the study time of the students using the camera of the device. The project will be available as an android app (main goal) and as a website (future work). This app will be able to recognize the user and identify the amount of time he/she has spent on a particular material. </p>
 <p>Study Tracker is designed to use both the face recognition API and eye tracking API to confirm whether a reader is actually reading or not. The idea is based on Google Classroom. Through the Study Tracker, any user can create a classroom and upload materials. Students, in this classroom, can access and read the materials using this app or the website. Additionally, their facial information will be tracked to recognize and verify whether he/she is the actual user. Their eyes will also be tracked while reading the materials. Inside a class, the creator can monitor the reading time of the students and the amount of time a material is read. Furthermore, if the creator wants, they can view the statistics of the individual students in the class.</p>
 <p>&nbsp;</p>
+
 <p><strong>FEATURES</strong></p>
 <ul>
 <li>Sign-in process using facial-recognition.</li>
