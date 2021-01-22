@@ -86,8 +86,7 @@ The class creator can upload or delete class materials to and from the class.
    Figure 5.0
  </p>
 
- <h2 id="technology">3. Technology</h2>
- <h3>3.1 Implemented Technology: </h3>
+<h2 id="technology">3. Technology</h2>
 <p>We decided to go with latest technologies for developing this application in order to give users a better experience.</p>
 <p><em>Frontend</em></p>
 <p>For the front end we will be using Android with Java and XML. XML and Android programming will be used to create user interface.</p>
