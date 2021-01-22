@@ -27,7 +27,7 @@
 
 <ol>
   <a href="#introduction"><li>Introduction</li><br></a>
-  <a href="#features"><li>Software Specification</li><br></a>
+  <a href="#features"><li>Features</li><br></a>
   <a href="#technology"><li>Technology</li><br></a>
   <a href="#monetization"><li>Monetization</li></a><br>
   <a href="#conclusion"><li>Conclusion</li></a><br><hr>
@@ -39,19 +39,55 @@
 <p>Study Tracker is designed to use both the face recognition API and eye tracking API to confirm whether a reader is actually reading or not. The idea is based on Google Classroom. Through the Study Tracker, any user can create a classroom and upload materials. Students, in this classroom, can access and read the materials using this app or the website. Additionally, their facial information will be tracked to recognize and verify whether he/she is the actual user. Their eyes will also be tracked while reading the materials. Inside a class, the creator can monitor the reading time of the students and the amount of time a material is read. Furthermore, if the creator wants, they can view the statistics of the individual students in the class.</p>
 <p>&nbsp;</p>
 
-<p><strong>FEATURES</strong></p>
-<ul>
-<li>Sign-in process using facial-recognition.</li>
-<li>User can Log-in using their gmail account.</li>
-<li>New users will be able to sign-up using their email address. Existing users will also be able to sign-in using e-mail address. If that email address is already registered, the user will be shown a window, where he/she needs to provide password. But if the email does not exist, then a sign-up window will be shown.</li>
-<li>The app will be tracking the eyes of the reader and will understand if the reader is reading or not. It is an instant process, so eyes are being tracked real-time.</li>
-<li>The system will be using eye tracking to determine the amount of time users spent to study using this application.</li>
-<li>The system will perform as an online classroom where teachers can upload materials and students will be able to read the materials.</li>
-<li>Users can create a classroom or join a classroom.</li>
-<li>Random code will be generated for individual class. So, to join an existing class a user must provide the specific code.</li>
-</ul>
-<p>&nbsp;</p>
-<p><strong>TECHNOLOGY</strong></p>
+<h2 id="features">2. Features</h2>
+This project has the following features -
+<h3>2.1 User Registration:</h3>
+  To access the platform, the users first have to register. Users must include Full Name, Email Address, Gender and Password.
+   <br>
+   <br>
+ <p align="center">
+   <img width="216" height="444" src="Mockup/SignUp.png"><br>
+   Figure 1.0
+ </p>
+ 
+ <h3>2.2 User Login :</h3>
+  The user can login into the platform by authenticating using email address and password.
+  <br>
+  <br>
+  <p align="center">
+  <img width="216" height="444" src="Mockup/SignIn.png"><br>
+  Figure 2.0
+</p>
+
+<h3>2.3 Create/Join Class:</h3>
+The user can create or join classes.
+<br>
+<br>
+ <p align="center">
+   <img width="216" height="444" src="Mockup/CreateJoin.png"><br>
+   Figure 3.0
+ </p>
+ 
+<h3>2.4 Monitor Progress:</h3>
+The class creator can monitor the activity time of the users who joined the class.
+<br>
+<br>
+ <p align="center">
+   <img width="216" height="444" src="Mockup/Progress.png"><br>
+   Figure 4.0
+ </p>
+ 
+ <h3>2.4 Upload Class Materials:</h3>
+The class creator can upload or delete class materials to and from the class.
+<br>
+<br>
+ <p align="center">
+   <img width="216" height="444" src="Mockup/Upload.png"><br>
+   Figure 5.0
+ </p>
+
+ <h2 id="technology">3. Technology</h2>
+ <h3>3.1 Implemented Technology: </h3>
 <p>We decided to go with latest technologies for developing this application in order to give users a better experience.</p>
 <p><em>Frontend</em></p>
 <p>For the front end we will be using Android with Java and XML. XML and Android programming will be used to create user interface.</p>
@@ -63,10 +99,12 @@
 <p>Firebase will also be used to for the user authentication.</p>
 <p>The app can run on android devices which have version 5.0 (Lollipop)or more.</p>
 <p>&nbsp;</p>
-<p><strong>MONETIZATION</strong></p>
+
+<h2 id="monetization">4. Monetization</h2>
 <p>We will try to make our product subscription based and sell it to different schools and colleges. As the young people need constant monitoring on their studies, they make the perfect audience for our product.</p>
 <p>Educational institutes can also place their ads on the website after it is launched, which will help them advertise themselves to the audience.</p>
 <p>&nbsp;</p>
-<p><strong>SOCIAL ASPECTS</strong></p>
+
+<h2 id="conclusion">5. Conclusion</h2>
 <p>This project would be beneficial for the teachers who want to monitor their students. The teacher will be able to check in the students whether they are studying properly or not, and it is also easy to track their progress.</p>
 <p>&nbsp;</p>
